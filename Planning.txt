@@ -1,0 +1,54 @@
+#React Todo List App
+
+Problem: Create a todo list app that allows users to add a task to a list with 3 levels of priority, high, medium and low.
+    It should have 4 main pages:
+    1. Registration Page
+    2. Login Page
+    3. Home Page
+    4. Profile Page
+
+Requirements: 
+    User interface:
+    1. Allow users to view, add, update and delete their tasks.
+    2. The user should be able to view and update their detatil - Profile Page.
+    3. A page to enter task inputs.
+
+    Inputs:
+    1. Task name
+    2. Task definition
+    3. Task priority
+    4. Task status
+    5. Task due date
+
+
+    Features:
+    User must be able to:
+    1. Add new tasks
+    2. View added tasks
+    3. Update added tasks
+    4. Delete tasks
+    5. Mark task as completed
+    6. Filter task by due date, priority, or completed status
+
+
+
+Solution: 
+    1. Create Registration Page to take username and password
+    2. Create an array to store user login information
+    3. Create Login Page to access Home Page using registered username and password
+    4. Use username and other user info to render Profile Page
+
+
+    Functions:
+    1. addTask - function to create new task.
+    3. UpdateTask - function to update task information.
+    4. DeleteTask - function to delete task.
+    5. FilterTask - function to filter task.
+
+    Components:
+    1. Profile - component with user profile information.
+    2. AddTask - component to enter task information.
+    3. DisplayTask - displays user tasks on page.
+    4. SearchTasks - used to filter tasks by due date, priority and completed status.
+
+   
