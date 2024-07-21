@@ -40,15 +40,20 @@ Solution:
 
 
     Functions:
-    1. addTask - function to create new task.
-    3. UpdateTask - function to update task information.
-    4. DeleteTask - function to delete task.
-    5. FilterTask - function to filter task.
+    1. addUser - function to add user.
+    2. addTask - function to create new task.
+    3. updateTask - function to update task information.
+    4. deleteTask - function to delete task.
+    5. filterTask - function to filter task.
 
     Components:
-    1. Profile - component with user profile information.
-    2. AddTask - component to enter task information.
-    3. DisplayTask - displays user tasks on page.
-    4. SearchTasks - used to filter tasks by due date, priority and completed status.
+    1. HomePage - component with landing page information.
+    2. RegistrationPage - component to get user information.
+    3. LoginPage - component to login.
+
+    4. Profile - component with user profile information.
+    5. AddTask - component to enter task information.
+    6. DisplayTask - displays user tasks on page.
+    7. SearchTasks - used to filter tasks by due date, priority and completed status.
 
    
