@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Home from "./components/Home";
+import Login from "./components/login";
+import { useState } from "react";
 
 function App() {
+  const [users, setUsers] = useState([
+    { username: "guest", password: "guest" },
+  ]);
+  const [loginStatus, setLoginStatus] = useState(false);
+
+  console.log(users);
+  function handleLoginSubmit(obj) {
+    const findUser = users.filter((user) => user.username === obj.username);
+    if (findUser.length > 0) {
+      let [user] = findUser;
+      console.log("user exists", obj, findUser);
+      if (user.password === obj.password) {
+        console.log("login success!");
+        setLoginStatus(true);
+      } else {
+        console.log("invalid login password");
+      }
+    } else {
+      console.log("user does not exist");
+    }
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Login handleLoginSubmit={handleLoginSubmit} />
+      <Home />
     </div>
   );
 }

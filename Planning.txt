@@ -55,5 +55,6 @@ Solution:
     5. AddTask - component to enter task information.
     6. DisplayTask - displays user tasks on page.
     7. SearchTasks - used to filter tasks by due date, priority and completed status.
+    8. Task - component to show individual task.
 
    
