@@ -3,15 +3,14 @@ import "./App.css";
 import Login from "./components/login";
 import Home from "./components/Home";
 import Registration from "./components/registration";
+import useLocalStorage from "./components/useLocalStorage";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   //users array
-  const [users, setUsers] = useState([
-    { username: "guest", password: "guest", tasks: [] },
-  ]);
-  const [currentUser, setCurrentUser] = useState({});
+  const [users, setUsers] = useLocalStorage("users", []);
+  const [currentUser, setCurrentUser] = useLocalStorage("currentUser", {});
   const [loginStatus, setLoginStatus] = useState(false);
   const [registrationStatus, setRegistrationStatus] = useState(false);
 
