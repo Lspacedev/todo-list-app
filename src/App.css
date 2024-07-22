@@ -123,3 +123,69 @@ nav {
 
 .Login input[type="text"] {
 }
+
+.Home {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+
+}
+
+.sidemenu {
+  flex: 20%;
+  box-shadow: 2px 0px 5px -2px black;
+  z-index: 1;
+}
+
+.main {
+  flex: 80%;
+}
+
+.display-tasks {
+
+}
+
+.tasks-display {
+  padding: 50px;
+  list-style: none;
+  background-color: whitesmoke;
+
+  
+}
+
+.search-profile {
+  display: flex;
+  justify-content: end;
+  gap: 15px;
+}
+
+.search-profile div {
+  margin: 15px;
+}
+
+.Add {
+  
+  text-align: end;
+  margin: 15px;
+}
+
+.Add-div  button{
+  padding: 12px 32px;
+  border: none;
+  color: white;
+  background-color: #ed6a5a;
+}
+
+.Task {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 15px;
+}
+
+.task-info {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 50px;
+}

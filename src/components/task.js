@@ -97,7 +97,7 @@ function Task({
           </div>
         </div>
       ) : (
-        <div className="Employee">
+        <div className="task-info">
           <h3>{name}</h3>
           <h5>{definition}</h5>
           <h5>{priority}</h5>

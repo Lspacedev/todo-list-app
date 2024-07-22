@@ -1,5 +1,4 @@
 import { useState } from "react";
-import AddTask from "./addTask";
 import DisplayTasks from "./displayTasks";
 import Profile from "./profile";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
@@ -11,32 +10,40 @@ function Home({
   handleTaskDelete,
   handleTaskUpdate,
   handleTaskResubmit,
+  handleLogOut,
 }) {
-  const [profileClick, setProfileClick] = useState(false);
+  const [currentPage, setCurrentPage] = useState("todo");
+  function changePage(page) {
+    setCurrentPage(page);
+  }
   return (
-    <div>
-      <h1>Home</h1>
-      <Link to="profile">
-        <div
-          onClick={() => {
-            setProfileClick(true);
-          }}
-        >
-          Profile
-        </div>
-      </Link>
-      <AddTask handleAddTask={handleAddTask} />
-      <DisplayTasks
-        tasks={tasks}
-        handleTaskDelete={handleTaskDelete}
-        handleTaskUpdate={handleTaskUpdate}
-        handleTaskResubmit={handleTaskResubmit}
-      />
-      {/*<Routes>
-          <Route element={<ProtectedRoutes loginStatus={profileClick} />}>
-            <Route path="profile" element={<Profile />} />
-          </Route>
-        </Routes>*/}
+    <div className="Home">
+      <div className="sidemenu">
+        <h3>todo List</h3>
+        <h4 onClick={handleLogOut}>Logout</h4>
+        <div>Dashboard</div>
+        <div onClick={() => changePage("todo")}>To Do List</div>
+      </div>
+      <div className="main">
+        {currentPage === "profile" ? (
+          <div>
+            <Profile />
+          </div>
+        ) : (
+          <div className="main-content">
+            <div className="display-tasks">
+              <DisplayTasks
+                tasks={tasks}
+                handleAddTask={handleAddTask}
+                handleTaskDelete={handleTaskDelete}
+                handleTaskUpdate={handleTaskUpdate}
+                handleTaskResubmit={handleTaskResubmit}
+                changePage={changePage}
+              />
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

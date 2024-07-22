@@ -9,8 +9,6 @@ function AddTask({ handleAddTask }) {
   return (
     <div className="Add">
       <div className="Add-div">
-        <div className="logo"></div>
-
         <button onClick={toggleClicked}>New Task</button>
       </div>
       {clicked && (

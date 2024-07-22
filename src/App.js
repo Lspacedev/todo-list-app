@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Registration from "./components/registration";
 import Landing from "./components/landing";
 import ProtectedRoutes from "./components/ProtectedRoute";
+import Profile from "./components/profile";
 import useLocalStorage from "./components/useLocalStorage";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -13,14 +14,14 @@ function App() {
   //users array
   const [users, setUsers] = useLocalStorage("users", []);
   const [currentUser, setCurrentUser] = useLocalStorage("currentUser", {});
-  const [loginStatus, setLoginStatus] = useState(false);
+  const [loginStatus, setLoginStatus] = useLocalStorage("loginStatus", false);
   const [registrationStatus, setRegistrationStatus] = useState(false);
 
   useEffect(() => {
     console.log("updating...");
     const usersCopy = users.slice(0);
     const foundUser = usersCopy.find(
-      (user) => user.username === currentUser.username
+      (user) => user.username === currentUser.username,
     );
     if (foundUser) {
       foundUser.tasks = currentUser.tasks.slice(0);
@@ -64,7 +65,7 @@ function App() {
   function handleAddTask(obj) {
     //find task
     const filteredTask = currentUser.tasks.filter(
-      (task) => task.taskName === obj.taskName
+      (task) => task.taskName === obj.taskName,
     );
 
     //if task doesn't exist add them
@@ -76,7 +77,7 @@ function App() {
 
   function handleTaskDelete(name) {
     const filteredTasks = currentUser.tasks.filter(
-      (task) => task.taskName !== name
+      (task) => task.taskName !== name,
     );
     setCurrentUser((prev) => ({ ...prev, tasks: filteredTasks }));
   }
@@ -115,6 +116,10 @@ function App() {
 
     setCurrentUser((prev) => ({ ...prev, tasks: tasksCopy }));
   }
+
+  function handleLogOut() {
+    setLoginStatus(false);
+  }
   console.log(users);
   return (
     <Router>
@@ -144,7 +149,7 @@ function App() {
 
           <Route element={<ProtectedRoutes loginStatus={loginStatus} />}>
             <Route
-              path="home"
+              path="home/*"
               element={
                 <Home
                   tasks={currentUser.tasks || []}
@@ -152,9 +157,11 @@ function App() {
                   handleTaskDelete={handleTaskDelete}
                   handleTaskUpdate={handleTaskUpdate}
                   handleTaskResubmit={handleTaskResubmit}
+                  handleLogOut={handleLogOut}
                 />
               }
             />
+            <Route path="home/profile" element={<Profile />} />
           </Route>
         </Routes>
         {/*<Registration handleRegistrationSubmit={handleRegistrationSubmit} />*/}

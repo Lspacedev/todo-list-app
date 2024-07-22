@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
+import AddTask from "./addTask";
 
 import Task from "./task";
 
 function DisplayTasks({
   tasks,
+  handleAddTask,
   handleTaskDelete,
   handleTaskUpdate,
   handleTaskResubmit,
+  changePage,
 }) {
   const [searchInput, setSearchInput] = useState("");
 
@@ -20,8 +23,8 @@ function DisplayTasks({
         tasks.filter(
           (task) =>
             task.taskName.toLowerCase().match(searchInput.toLowerCase()) ||
-            task.priority.toLowerCase().match(searchInput.toLowerCase())
-        )
+            task.priority.toLowerCase().match(searchInput.toLowerCase()),
+        ),
       );
     }
     return () => {
@@ -36,8 +39,9 @@ function DisplayTasks({
 
   return (
     <div className="Display">
-      <div className="search-div">
-        {/*<IoIosSearch
+      <div className="search-profile">
+        <div className="search-div">
+          {/*<IoIosSearch
           id="search-icon"
           style={{
             position: "absolute",
@@ -48,12 +52,19 @@ function DisplayTasks({
             padding: "0px",
           }}
         />*/}
-        <input
-          type="search"
-          placeholder="Search"
-          onChange={handleSearchChange}
-          value={searchInput}
-        />
+          <input
+            type="search"
+            placeholder="Search"
+            onChange={handleSearchChange}
+            value={searchInput}
+          />
+        </div>
+        <div onClick={() => changePage("profile")}>Profile</div>
+      </div>
+      <div className="add">
+        <div className="add-task">
+          <AddTask handleAddTask={handleAddTask} />
+        </div>
       </div>
 
       <ul className="tasks-display">
