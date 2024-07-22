@@ -19,7 +19,9 @@ function App() {
     const foundUser = usersCopy.find(
       (user) => user.username === currentUser.username
     );
-    foundUser.tasks = currentUser.tasks.slice(0);
+    if (foundUser) {
+      foundUser.tasks = currentUser.tasks.slice(0);
+    }
 
     setUsers(usersCopy);
   }, [currentUser]);
