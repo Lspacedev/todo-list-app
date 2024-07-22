@@ -20,8 +20,8 @@ function DisplayTasks({
         tasks.filter(
           (task) =>
             task.taskName.toLowerCase().match(searchInput.toLowerCase()) ||
-            task.priority.toLowerCase().match(searchInput.toLowerCase()),
-        ),
+            task.priority.toLowerCase().match(searchInput.toLowerCase())
+        )
       );
     }
     return () => {
@@ -56,7 +56,7 @@ function DisplayTasks({
         />
       </div>
 
-      <ul className="employees-display">
+      <ul className="tasks-display">
         {searchResults.length !== 0
           ? searchResults.map((task) => (
               <li key={task.taskName}>

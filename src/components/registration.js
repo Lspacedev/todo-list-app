@@ -3,6 +3,7 @@ function Registration({ handleRegistrationSubmit }) {
   const [userDetails, setUserDetails] = useState({
     username: "",
     password: "",
+    tasks: [],
   });
 
   function handleChange(e) {
