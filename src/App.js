@@ -3,6 +3,8 @@ import "./App.css";
 import Login from "./components/login";
 import Home from "./components/Home";
 import Registration from "./components/registration";
+import Landing from "./components/landing";
+import ProtectedRoutes from "./components/ProtectedRoute";
 import useLocalStorage from "./components/useLocalStorage";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -118,9 +120,10 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
+          <Route exact path="/" element={<Landing />} />
           <Route
             exact
-            path="/"
+            path="registration"
             element={
               <Registration
                 handleRegistrationSubmit={handleRegistrationSubmit}
@@ -139,18 +142,20 @@ function App() {
             }
           />
 
-          <Route
-            path="home"
-            element={
-              <Home
-                tasks={currentUser.tasks || []}
-                handleAddTask={handleAddTask}
-                handleTaskDelete={handleTaskDelete}
-                handleTaskUpdate={handleTaskUpdate}
-                handleTaskResubmit={handleTaskResubmit}
-              />
-            }
-          />
+          <Route element={<ProtectedRoutes loginStatus={loginStatus} />}>
+            <Route
+              path="home"
+              element={
+                <Home
+                  tasks={currentUser.tasks || []}
+                  handleAddTask={handleAddTask}
+                  handleTaskDelete={handleTaskDelete}
+                  handleTaskUpdate={handleTaskUpdate}
+                  handleTaskResubmit={handleTaskResubmit}
+                />
+              }
+            />
+          </Route>
         </Routes>
         {/*<Registration handleRegistrationSubmit={handleRegistrationSubmit} />*/}
       </div>

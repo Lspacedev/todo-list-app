@@ -15,7 +15,7 @@ function Registration({ handleRegistrationSubmit, registrationStatus }) {
       console.log(registrationStatus);
       console.log("statussssssss");
       //on success redirect user
-      navigation("login");
+      navigation("/login");
     }
   }, [registrationStatus]);
 
