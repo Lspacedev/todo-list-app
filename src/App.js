@@ -13,6 +13,7 @@ function App() {
   ]);
   const [currentUser, setCurrentUser] = useState({});
   const [loginStatus, setLoginStatus] = useState(false);
+  const [registrationStatus, setRegistrationStatus] = useState(false);
 
   useEffect(() => {
     console.log("updating...");
@@ -32,8 +33,11 @@ function App() {
     const filteredUser = users.filter((user) => user.username === obj.username);
     if (filteredUser.length > 0) {
       console.log("user already exists");
+    } else if (obj.username === "" || obj.password === "") {
+      console.log("not user info");
     } else {
       setUsers((prev) => [...prev, obj]);
+      setRegistrationStatus(true);
     }
   }
 
@@ -118,6 +122,16 @@ function App() {
           <Route
             exact
             path="/"
+            element={
+              <Registration
+                handleRegistrationSubmit={handleRegistrationSubmit}
+                registrationStatus={registrationStatus}
+              />
+            }
+          />
+          <Route
+            exact
+            path="login"
             element={
               <Login
                 handleLoginSubmit={handleLoginSubmit}

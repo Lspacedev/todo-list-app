@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Login({ handleLoginSubmit, loginStatus }) {
@@ -9,12 +9,13 @@ function Login({ handleLoginSubmit, loginStatus }) {
 
   //navigation
   const navigation = useNavigate();
-
-  if (loginStatus === true) {
-    console.log("statussssssss");
-    //on success redirect user
-    navigation("home");
-  }
+  useEffect(() => {
+    if (loginStatus === true) {
+      console.log("statussssssss");
+      //on success redirect user
+      navigation("/home");
+    }
+  }, [loginStatus]);
 
   function handleChange(e) {
     e.preventDefault();

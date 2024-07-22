@@ -1,10 +1,23 @@
-import { useState } from "react";
-function Registration({ handleRegistrationSubmit }) {
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+function Registration({ handleRegistrationSubmit, registrationStatus }) {
   const [userDetails, setUserDetails] = useState({
     username: "",
     password: "",
     tasks: [],
   });
+
+  //navigation
+  const navigation = useNavigate();
+  useEffect(() => {
+    if (registrationStatus) {
+      console.log(registrationStatus);
+      console.log("statussssssss");
+      //on success redirect user
+      navigation("login");
+    }
+  }, [registrationStatus]);
 
   function handleChange(e) {
     e.preventDefault();
