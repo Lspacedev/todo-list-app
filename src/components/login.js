@@ -1,10 +1,20 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function Login({ handleLoginSubmit }) {
+function Login({ handleLoginSubmit, loginStatus }) {
   const [loginDetails, setLoginDetails] = useState({
     username: "",
     password: "",
   });
+
+  //navigation
+  const navigation = useNavigate();
+
+  if (loginStatus === true) {
+    console.log("statussssssss");
+    //on success redirect user
+    navigation("home");
+  }
 
   function handleChange(e) {
     e.preventDefault();

@@ -4,6 +4,7 @@ import Login from "./components/login";
 import Home from "./components/Home";
 import Registration from "./components/registration";
 import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   //users array
@@ -111,17 +112,36 @@ function App() {
   }
   console.log(users);
   return (
-    <div className="App">
-      <Registration handleRegistrationSubmit={handleRegistrationSubmit} />
-      <Login handleLoginSubmit={handleLoginSubmit} />
-      <Home
-        tasks={currentUser.tasks || []}
-        handleAddTask={handleAddTask}
-        handleTaskDelete={handleTaskDelete}
-        handleTaskUpdate={handleTaskUpdate}
-        handleTaskResubmit={handleTaskResubmit}
-      />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <Login
+                handleLoginSubmit={handleLoginSubmit}
+                loginStatus={loginStatus}
+              />
+            }
+          />
+
+          <Route
+            path="home"
+            element={
+              <Home
+                tasks={currentUser.tasks || []}
+                handleAddTask={handleAddTask}
+                handleTaskDelete={handleTaskDelete}
+                handleTaskUpdate={handleTaskUpdate}
+                handleTaskResubmit={handleTaskResubmit}
+              />
+            }
+          />
+        </Routes>
+        {/*<Registration handleRegistrationSubmit={handleRegistrationSubmit} />*/}
+      </div>
+    </Router>
   );
 }
 
