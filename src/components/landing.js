@@ -2,16 +2,22 @@ import { Link } from "react-router-dom";
 
 function Landing() {
   return (
-    <div>
+    <div className="landing">
       <nav>
-        <div>Todo List</div>
-        <div>
-          <Link to="login">Login</Link>
-          <Link to="registration">Register</Link>
+        <div className="logo">todo List</div>
+        <div className="login-register">
+          <Link to="login">
+            <button className="login-btn">Login</button>
+          </Link>
+          <Link to="registration">
+            <button className="register-btn">Register</button>
+          </Link>
         </div>
       </nav>
-      <div>
-        <h2>Organize your day to day tasks.</h2>
+      <div className="landing-info">
+        <div className="landing-title">Organize your day to day tasks.</div>
+        <div className="landing-subtitle">Organize your day to day tasks.</div>
+        <button className="register-btn2">Register</button>
       </div>
     </div>
   );

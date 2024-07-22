@@ -29,43 +29,45 @@ function Login({ handleLoginSubmit, loginStatus }) {
   }
 
   return (
-    <div>
-      <h1>Login </h1>
-      <form>
-        <div className="username">
-          <label htmlFor="username">
-            Username:
-            <input
-              type="text"
-              id="username"
-              name="username"
-              onChange={(e) => handleChange(e)}
-              value={loginDetails.username}
-            />
-          </label>
-        </div>
+    <div className="Login">
+      <div className="login-form-container">
+        <h1>Login </h1>
+        <form>
+          <div className="username">
+            <label htmlFor="username">
+              Username:
+              <input
+                type="text"
+                id="username"
+                name="username"
+                onChange={(e) => handleChange(e)}
+                value={loginDetails.username}
+              />
+            </label>
+          </div>
 
-        <div className="password">
-          <label htmlFor="password">
-            Password:
-            <input
-              type="text"
-              id="password"
-              name="password"
-              onChange={(e) => handleChange(e)}
-              value={loginDetails.password}
-            />
-          </label>
-        </div>
+          <div className="password">
+            <label htmlFor="password">
+              Password:
+              <input
+                type="text"
+                id="password"
+                name="password"
+                onChange={(e) => handleChange(e)}
+                value={loginDetails.password}
+              />
+            </label>
+          </div>
 
-        <input
-          type="submit"
-          value="submit"
-          onClick={(e) => handleSubmit(e)}
-        ></input>
-      </form>
+          <input
+            type="submit"
+            value="submit"
+            onClick={(e) => handleSubmit(e)}
+          ></input>
+        </form>
 
-      <button>Go to home page</button>
+        <button>Go to home page</button>
+      </div>
     </div>
   );
 }

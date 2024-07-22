@@ -27,7 +27,99 @@
 .App-link {
   color: #61dafb;
 }
- .Task input{
+.Task input {
   border: none;
- }
- 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.App,
+body,
+#root,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.landing {
+  height: 100%;
+}
+
+.landing-info {
+  padding: 150px;
+}
+
+.landing-title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 20px;
+}
+.landing-subtitle {
+  font-size: 1.5rem;
+  margin: 10px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #5d576b;
+  margin: 15px;
+}
+
+.login-register {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.login-btn {
+  font-size: 1.2rem;
+  color: #5d576b;
+  border: none;
+}
+
+.register-btn {
+  background-color: #5d576b;
+  color: white;
+  font-weight: bold;
+  padding: 12px 18px;
+  border-radius: 7px;
+
+  margin-right: 10px;
+  border: none;
+}
+
+.register-btn2 {
+  background-color: #5d576b;
+  color: white;
+  font-weight: bold;
+  padding: 20px 30px;
+  border-radius: 8px;
+  border: none;
+}
+
+.Login {
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: whitesmoke;
+}
+
+.login-form-container {
+  background-color: white;
+  border: 1px solid black;
+  padding: 40px;
+
+  border-radius: 15px;
+}
+
+.Login input[type="text"] {
+}
