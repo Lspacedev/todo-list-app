@@ -54,8 +54,7 @@ function DisplayTasks({
             id="search-icon"
             style={{
               position: "absolute",
-              top: "10px",
-              left: "10px",
+
               fontSize: "1.6rem",
               marginRight: "0px",
               padding: "0px",

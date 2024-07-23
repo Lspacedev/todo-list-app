@@ -1,43 +1,16 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 * {
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.App,
-body,
-#root,
-html {
-  height: 100%;
-  width: 100%;
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.App {
+  min-height: 100vh;
 }
 
 .landing {
@@ -125,13 +98,15 @@ nav {
   display: flex;
   flex-direction: row;
   height: 100%;
+  width: 100%;
 }
 
 .Display {
 }
 
 .sidemenu {
-  flex: 7%;
+  text-align: center;
+  flex: 10%;
   box-shadow: 4px 0 4px -5px #333;
   z-index: 1;
 }
@@ -140,7 +115,6 @@ nav {
 }
 .sidemenu div {
   color: #373341;
-  font-weight: 600;
   margin: 25px 0px;
   padding: 20px 0px;
 }
@@ -163,10 +137,11 @@ nav {
 }
 
 .tasks-display {
+  padding: 20px;
   height: 80vh;
 
   list-style: none;
-  background-color: whitesmoke;
+  background-color: rgb(230, 230, 230);
 }
 
 .search-profile {
@@ -188,8 +163,7 @@ nav {
   display: flex;
   align-items: center;
   margin: 10px 0px;
-  padding: 10px;
-  width: 20%;
+
   border: 1px solid rgb(168, 168, 168);
   border-radius: 40px;
   position: relative;
@@ -231,11 +205,19 @@ nav {
 }
 
 .Task {
-  background-color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   margin: 15px;
+}
+.task-content {
+  padding: 5px 0px 5px 10px;
+  width: 90%;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 10px;
 }
 
 .task-info {
@@ -261,4 +243,85 @@ nav {
 }
 
 .profile-link {
+}
+
+.delete-update {
+  display: flex;
+  align-items: center;
+}
+
+.high {
+  display: block;
+  border-right: 4px solid red;
+  width: 100px;
+  height: 100%;
+}
+
+.medium {
+  background-color: orange;
+}
+
+.low {
+  background-color: green;
+}
+
+@media (max-width: 768px) {
+  .Home {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .sidemenu {
+    display: flex;
+    justify-content: space-around;
+    gap: 0px;
+    align-items: center;
+    flex: 0%;
+    padding: 5px;
+    margin: 0px;
+    box-shadow: 0px 0 0px 0px;
+  }
+  .sidemenu div {
+    color: #373341;
+    margin: 0px;
+    padding: 0px;
+  }
+  .sidemenu h3 {
+    margin: 0px;
+    margin-bottom: 0px;
+  }
+
+  .search-profile {
+    justify-content: space-evenly;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidemenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    align-items: center;
+  }
+
+  .form-div form {
+    flex-wrap: wrap;
+  }
+  .Task {
+    background-color: ;
+  }
+  .task-content {
+    background-color: none;
+    padding: 50px 100px;
+
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .task-info {
+    margin: 0px;
+    justify-content: center;
+    gap: 5px;
+  }
 }
