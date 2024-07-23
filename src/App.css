@@ -137,6 +137,25 @@ nav {
   z-index: 1;
 }
 
+.sidemenu div {
+  color: #282c34;
+  margin: 45px;
+}
+
+.sidemenu div:hover {
+  color: #ed6a5a;
+  margin: 45px;
+}
+
+
+.link {
+  text-decoration: none;
+}
+
+.logo {
+  color: #ed6a5a;
+}
+
 .main {
   flex: 80%;
 }
@@ -163,6 +182,16 @@ nav {
   margin: 15px;
 }
 
+.search-profile .link {
+  color: #282c34;
+  margin: 15px;
+}
+
+.search-profile .link:hover {
+  color: #ed6a5a;
+}
+
+
 .Add {
   
   text-align: end;
@@ -174,6 +203,10 @@ nav {
   border: none;
   color: white;
   background-color: #ed6a5a;
+}
+
+.Add-div  button:hover{
+  background-color: #5d576b;
 }
 
 .Task {

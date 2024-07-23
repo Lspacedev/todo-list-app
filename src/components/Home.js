@@ -2,6 +2,8 @@ import { useState } from "react";
 import DisplayTasks from "./displayTasks";
 import Profile from "./profile";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+
 //import ProtectedRoutes from "./components/ProtectedRoute";
 
 function Home({
@@ -19,12 +21,23 @@ function Home({
   return (
     <div className="Home">
       <div className="sidemenu">
-        <h3>todo List</h3>
-        <h4 onClick={handleLogOut}>Logout</h4>
+        <h3 className="logo">todo List</h3>
         <div>Dashboard</div>
-        <div onClick={() => changePage("todo")}>To Do List</div>
+
+        <Link to="profile" className="link">
+          <div>Profile</div>
+        </Link>
+        <Link to="todos" className="link">
+          <div>To Do List</div>
+        </Link>
+
+        <div onClick={handleLogOut}>Logout</div>
       </div>
       <div className="main">
+        <Outlet />
+      </div>
+
+      {/*<div className="main">
         {currentPage === "profile" ? (
           <div>
             <Profile />
@@ -43,7 +56,7 @@ function Home({
             </div>
           </div>
         )}
-      </div>
+      </div>*/}
     </div>
   );
 }

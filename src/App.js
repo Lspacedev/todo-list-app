@@ -6,6 +6,8 @@ import Registration from "./components/registration";
 import Landing from "./components/landing";
 import ProtectedRoutes from "./components/ProtectedRoute";
 import Profile from "./components/profile";
+import DisplayTasks from "./components/displayTasks";
+import User from "./components/user";
 import useLocalStorage from "./components/useLocalStorage";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -148,8 +150,8 @@ function App() {
           />
 
           <Route element={<ProtectedRoutes loginStatus={loginStatus} />}>
-            <Route
-              path="home/*"
+            {/*<Route
+              path="home"
               element={
                 <Home
                   tasks={currentUser.tasks || []}
@@ -160,8 +162,34 @@ function App() {
                   handleLogOut={handleLogOut}
                 />
               }
-            />
-            <Route path="home/profile" element={<Profile />} />
+            />*/}
+            <Route path="home" element={<Home handleLogOut={handleLogOut} />}>
+              <Route
+                index
+                element={
+                  <DisplayTasks
+                    tasks={currentUser.tasks || []}
+                    handleAddTask={handleAddTask}
+                    handleTaskDelete={handleTaskDelete}
+                    handleTaskUpdate={handleTaskUpdate}
+                    handleTaskResubmit={handleTaskResubmit}
+                  />
+                }
+              />
+              <Route path="profile" element={<Profile />} />
+              <Route
+                path="todos"
+                element={
+                  <DisplayTasks
+                    tasks={currentUser.tasks || []}
+                    handleAddTask={handleAddTask}
+                    handleTaskDelete={handleTaskDelete}
+                    handleTaskUpdate={handleTaskUpdate}
+                    handleTaskResubmit={handleTaskResubmit}
+                  />
+                }
+              />
+            </Route>
           </Route>
         </Routes>
         {/*<Registration handleRegistrationSubmit={handleRegistrationSubmit} />*/}

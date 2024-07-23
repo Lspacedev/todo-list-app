@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { Routes, Route, Link, Outlet } from "react-router-dom";
+
 import AddTask from "./addTask";
 
 import Task from "./task";
@@ -59,7 +61,9 @@ function DisplayTasks({
             value={searchInput}
           />
         </div>
-        <div onClick={() => changePage("profile")}>Profile</div>
+        <Link to="profile" className="link">
+          Profile
+        </Link>
       </div>
       <div className="add">
         <div className="add-task">
