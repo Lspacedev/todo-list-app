@@ -15,6 +15,7 @@ body {
 
 .landing {
   height: 100%;
+  text-align: center;
 }
 
 .landing-info {
@@ -32,7 +33,7 @@ body {
 }
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .logo {
@@ -40,6 +41,11 @@ nav {
   font-weight: 400;
   color: #5d576b;
   margin: 15px;
+}
+
+.Login {
+  height: 100%;
+  text-align: center;
 }
 
 .login-register {
@@ -51,6 +57,7 @@ nav {
 .login-btn {
   font-size: 1.2rem;
   color: #5d576b;
+  background-color: white;
   border: none;
 }
 
@@ -74,8 +81,9 @@ nav {
   border: none;
 }
 
-.Login {
-  height: inherit;
+.Login,
+.Registration {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,15 +91,51 @@ nav {
   background-color: whitesmoke;
 }
 
-.login-form-container {
+.Registration {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form-container {
   background-color: white;
-  border: 1px solid black;
+
   padding: 40px;
 
   border-radius: 15px;
 }
 
+.login-form-container {
+  background-color: white;
+
+  padding: 40px;
+
+  border-radius: 15px;
+}
+
+.login-form-container h3 {
+  margin: 0px 0px 5px 0px;
+}
+
 .Login input[type="text"] {
+  padding: 7px 15px;
+  margin: 5px;
+}
+
+.Login input[type="submit"] {
+  width: 100%;
+  padding: 7px 15px;
+  margin: 5px;
+}
+
+.Registration input[type="text"] {
+  padding: 7px 15px;
+  margin: 5px;
+}
+
+.Registration input[type="submit"] {
+  width: 100%;
+  padding: 7px 15px;
+  margin: 5px;
 }
 
 .Home {
@@ -105,17 +149,18 @@ nav {
 }
 
 .sidemenu {
-  text-align: center;
+  text-align: start;
   flex: 10%;
   box-shadow: 4px 0 4px -5px #333;
   z-index: 1;
 }
 .sidemenu h3 {
-  margin-bottom: 120px;
+  margin-bottom: 50px;
+  text-align: center;
 }
 .sidemenu div {
   color: #373341;
-  margin: 25px 0px;
+  margin: 15px 45px;
   padding: 20px 0px;
 }
 .link {
@@ -126,7 +171,9 @@ nav {
 }
 
 .logo {
-  color: #ed6a5a;
+  color: #373341;
+  font-size: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .main {
@@ -163,9 +210,10 @@ nav {
   display: flex;
   align-items: center;
   margin: 10px 0px;
+  padding: 0px 40px 0px 7px;
 
   border: 1px solid rgb(168, 168, 168);
-  border-radius: 40px;
+  border-radius: 50px;
   position: relative;
 
   background-color: white;
@@ -211,7 +259,7 @@ nav {
   margin: 15px;
 }
 .task-content {
-  padding: 5px 0px 5px 10px;
+  padding: 0px 10px 0px 0px;
   width: 90%;
   background-color: white;
   display: flex;
@@ -252,17 +300,86 @@ nav {
 
 .high {
   display: block;
-  border-right: 4px solid red;
-  width: 100px;
+  border-left: 4px solid red;
+  border-radius: 10px;
+
   height: 100%;
 }
 
 .medium {
-  background-color: orange;
+  display: block;
+  border-left: 4px solid orange;
+  border-radius: 10px;
+
+  height: 100%;
 }
 
 .low {
-  background-color: green;
+  display: block;
+  border-left: 4px solid green;
+  border-radius: 10px;
+
+  height: 100%;
+}
+
+.delete,
+.update {
+  background-color: white;
+  border: none;
+}
+.delete-icon,
+.edit-icon {
+  font-size: 1.2rem;
+}
+
+.task-info .title {
+  font-size: 0.8rem;
+  color: gray;
+  margin: 5px;
+}
+.task-info h5 {
+  margin: 5px;
+}
+
+.Profile {
+  text-align: center;
+}
+.Profile button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  background-color: #5d576b;
+  color: white;
+}
+.Profile button:hover {
+  background-color: #ed6a5a;
+}
+.user-pass {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.user-pass h4 {
+  color: #282c34;
+}
+.user {
+  text-align: center;
+}
+
+.user div {
+  margin: 5px;
+}
+
+.pass {
+  text-align: center;
+}
+
+.pass div {
+  margin: 5px;
+}
+
+.sidemenu-icons {
+  margin-right: 5px;
 }
 
 @media (max-width: 768px) {
@@ -281,8 +398,16 @@ nav {
     margin: 0px;
     box-shadow: 0px 0 0px 0px;
   }
+  .sidemenu-links {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 15px;
+    padding: 10px;
+  }
+
   .sidemenu div {
     color: #373341;
+    font-size: 1.2rem;
     margin: 0px;
     padding: 0px;
   }
@@ -293,6 +418,9 @@ nav {
 
   .search-profile {
     justify-content: space-evenly;
+  }
+  .update-form {
+    flex-wrap: wrap;
   }
 }
 
@@ -309,19 +437,29 @@ nav {
     flex-wrap: wrap;
   }
   .Task {
-    background-color: ;
   }
   .task-content {
     background-color: none;
-    padding: 50px 100px;
-
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
+    padding: 0px;
   }
   .task-info {
     margin: 0px;
+    padding: 0px;
     justify-content: center;
     gap: 5px;
+  }
+
+  .high {
+  }
+}
+
+@media (max-width: 320px) {
+  .task-content {
+    flex-wrap: wrap;
+  }
+  .delete-update {
+    border: 1px solid black;
+    padding: 0px;
+    margin: 0px 0px 0px 50px;
   }
 }

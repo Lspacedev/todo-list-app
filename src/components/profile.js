@@ -1,9 +1,40 @@
-function Profile({ username, password }) {
+import { useState } from "react";
+
+function Profile({ username, password, handleUserUpdate }) {
+  const [usernam, setUsernam] = useState("");
+  const [update, setUpdate] = useState(false);
+
+  function handleSubmit(newName) {
+    handleUserUpdate(newName);
+    setUpdate(false);
+  }
+  function handleChange(e) {
+    e.preventDefault();
+    const { name, value } = e.target;
+    setUsernam(value);
+  }
+
   return (
     <div className="Profile">
       <div className="profile-picture"></div>
       <div className="contact-details">
         <h1>Account details</h1>
+        {update && (
+          <div>
+            <div className="name">
+              <label htmlFor="user-name">
+                Update username:
+                <input
+                  type="text"
+                  id="user-name"
+                  onChange={(e) => handleChange(e)}
+                  value={usernam}
+                />
+              </label>
+            </div>
+            <button onClick={() => handleSubmit(usernam)}>Submit</button>
+          </div>
+        )}
         {/*<div className="fname-sname">
           <div className="fname">
             <h3>First name:</h3>
@@ -22,14 +53,16 @@ function Profile({ username, password }) {
         </div>*/}
         <div className="user-pass">
           <div className="user">
-            <h3>Username:</h3>
+            <h4>Username:</h4>
             <div>{username}</div>
           </div>
+
           <div className="pass">
-            <h3>Password:</h3>
+            <h4>Password:</h4>
             <div>{password}</div>
           </div>
         </div>
+        <button onClick={() => setUpdate(true)}>Update</button>
       </div>
     </div>
   );

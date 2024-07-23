@@ -32,6 +32,14 @@ function App() {
     setUsers(usersCopy);
   }, [currentUser]);
 
+  function handleUserUpdate(name) {
+    /*const usersCopy = users.slice(0);
+    let user = usersCopy.find((user) => user.username === name);
+    user.username = update.username;*/
+
+    setCurrentUser((prev) => ({ ...prev, username: name }));
+  }
+
   function handleRegistrationSubmit(obj) {
     //check if user exists
     const filteredUser = users.filter((user) => user.username === obj.username);
@@ -182,6 +190,7 @@ function App() {
                   <Profile
                     username={currentUser.username}
                     password={currentUser.password}
+                    handleUserUpdate={handleUserUpdate}
                   />
                 }
               />

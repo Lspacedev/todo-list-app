@@ -3,6 +3,9 @@ import DisplayTasks from "./displayTasks";
 import Profile from "./profile";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
+import { MdOutlineDashboard } from "react-icons/md";
+import { CgProfile } from "react-icons/cg";
+import { FaTasks } from "react-icons/fa";
 
 //import ProtectedRoutes from "./components/ProtectedRoute";
 
@@ -22,16 +25,27 @@ function Home({
     <div className="Home">
       <div className="sidemenu">
         <h3 className="logo">todo List</h3>
-        <div>Dashboard</div>
+        <div className="sidemenu-links">
+          <div>
+            <MdOutlineDashboard className="sidemenu-icons" />
+            Dashboard
+          </div>
 
-        <Link to="profile" className="link">
-          <div>Profile</div>
-        </Link>
-        <Link to="todos" className="link">
-          <div>To Do List</div>
-        </Link>
+          <Link to="profile" className="link">
+            <div>
+              <CgProfile className="sidemenu-icons" />
+              Profile
+            </div>
+          </Link>
+          <Link to="todos" className="link">
+            <div>
+              <FaTasks className="sidemenu-icons" />
+              Tasks
+            </div>
+          </Link>
 
-        <div onClick={handleLogOut}>Logout</div>
+          <div onClick={handleLogOut}>Logout</div>
+        </div>
       </div>
       <div className="main">
         <Outlet />

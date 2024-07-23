@@ -31,7 +31,7 @@ function Login({ handleLoginSubmit, loginStatus }) {
   return (
     <div className="Login">
       <div className="login-form-container">
-        <h1>Login </h1>
+        <h3>Login </h3>
         <form>
           <div className="username">
             <label htmlFor="username">
@@ -65,8 +65,6 @@ function Login({ handleLoginSubmit, loginStatus }) {
             onClick={(e) => handleSubmit(e)}
           ></input>
         </form>
-
-        <button>Go to home page</button>
       </div>
     </div>
   );

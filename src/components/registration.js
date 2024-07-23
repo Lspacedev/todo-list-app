@@ -31,41 +31,43 @@ function Registration({ handleRegistrationSubmit, registrationStatus }) {
   }
 
   return (
-    <div>
-      <h1>Registration</h1>
-      <form>
-        <div className="username">
-          <label htmlFor="username">
-            Username:
-            <input
-              type="text"
-              id="username"
-              name="username"
-              onChange={(e) => handleChange(e)}
-              value={userDetails.username}
-            />
-          </label>
-        </div>
+    <div className="Registration">
+      <div className="register-form-container">
+        <h1>Registration</h1>
+        <form>
+          <div className="username">
+            <label htmlFor="username">
+              Username:
+              <input
+                type="text"
+                id="username"
+                name="username"
+                onChange={(e) => handleChange(e)}
+                value={userDetails.username}
+              />
+            </label>
+          </div>
 
-        <div className="password">
-          <label htmlFor="password">
-            Password:
-            <input
-              type="text"
-              id="password"
-              name="password"
-              onChange={(e) => handleChange(e)}
-              value={userDetails.password}
-            />
-          </label>
-        </div>
+          <div className="password">
+            <label htmlFor="password">
+              Password:
+              <input
+                type="text"
+                id="password"
+                name="password"
+                onChange={(e) => handleChange(e)}
+                value={userDetails.password}
+              />
+            </label>
+          </div>
 
-        <input
-          type="submit"
-          value="submit"
-          onClick={(e) => handleSubmit(e)}
-        ></input>
-      </form>
+          <input
+            type="submit"
+            value="submit"
+            onClick={(e) => handleSubmit(e)}
+          ></input>
+        </form>
+      </div>
     </div>
   );
 }

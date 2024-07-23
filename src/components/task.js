@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { FaEdit } from "react-icons/fa";
+import { MdOutlineDelete } from "react-icons/md";
+
 function Task({
   name,
   definition,
@@ -104,11 +107,33 @@ function Task({
           </div>
         ) : (
           <div className="task-info">
-            <h3>{name}</h3>
-            <h5>{definition}</h5>
-            <h5>{priority}</h5>
-            <h6>{status}</h6>
-            <h6>{dueDate}</h6>
+            {priority == "High" ? (
+              <div className="high"></div>
+            ) : priority == "Medium" ? (
+              <div className="medium"></div>
+            ) : (
+              <div className="low"></div>
+            )}
+            <div>
+              <div className="title">Name:</div>
+              <h5>{name}</h5>
+            </div>
+            <div>
+              <div className="title">Definition:</div>
+              <h5>{definition}</h5>
+            </div>
+            <div>
+              <div className="title">Priority:</div>
+              <h5>{priority}</h5>
+            </div>
+            <div>
+              <div className="title">Status:</div>
+              <h5>{status}</h5>
+            </div>
+            <div>
+              <div className="title">Due Date:</div>
+              <h5>{dueDate}</h5>
+            </div>
           </div>
         )}
         <div className="delete-update">
@@ -118,20 +143,13 @@ function Task({
               edit ? handleTaskResubmit(name, obj) : handleTaskUpdate(name);
             }}
           >
-            {edit ? "Update" : "Edit"}
+            {edit ? "Update" : <FaEdit className="edit-icon" />}
           </button>
 
           <button className="delete" onClick={() => handleTaskDelete(name)}>
-            Delete
+            <MdOutlineDelete className="delete-icon" />
           </button>
         </div>
-        {priority == "High" ? (
-          <div className="high"></div>
-        ) : priority == "Medium" ? (
-          <div className="medium"></div>
-        ) : (
-          <div className="low"></div>
-        )}
       </div>
     </div>
   );
