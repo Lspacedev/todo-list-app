@@ -4,13 +4,18 @@ function Form({ handleAddTask, toggleClicked }) {
   const [obj, setObj] = useState({
     taskName: "",
     definition: "",
-    priority: "",
-    status: "",
+    priority: "High",
+    status: "Not Completed",
     dueDate: "",
     edit: false,
   });
   function handleChange(e) {
     e.preventDefault();
+    const { name, value } = e.target;
+    setObj((prev) => ({ ...prev, [name]: value }));
+  }
+
+  function handleDropdownChange(e) {
     const { name, value } = e.target;
     setObj((prev) => ({ ...prev, [name]: value }));
   }
@@ -55,25 +60,28 @@ function Form({ handleAddTask, toggleClicked }) {
           <div className="priority">
             <label htmlFor="priority">
               Priority:
-              <input
-                type="text"
-                id="priority"
+              <select
                 name="priority"
-                onChange={(e) => handleChange(e)}
-                value={obj.priority}
-              />
+                onChange={handleDropdownChange}
+                value={obj.value}
+              >
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
             </label>
           </div>
           <div className="status">
             <label htmlFor="status">
               Status:
-              <input
-                type="text"
-                id="status"
+              <select
                 name="status"
-                onChange={(e) => handleChange(e)}
+                onChange={handleDropdownChange}
                 value={obj.status}
-              />
+              >
+                <option value="Not Completed">Not Completed</option>
+                <option value="Completed">Completed</option>
+              </select>
             </label>
           </div>
 

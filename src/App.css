@@ -27,9 +27,6 @@
 .App-link {
   color: #61dafb;
 }
-.Task input {
-  border: none;
-}
 
 * {
   box-sizing: border-box;
@@ -128,28 +125,30 @@ nav {
   display: flex;
   flex-direction: row;
   height: 100%;
+}
 
+.Display {
 }
 
 .sidemenu {
-  flex: 20%;
-  box-shadow: 2px 0px 5px -2px black;
+  flex: 7%;
+  box-shadow: 4px 0 4px -5px #333;
   z-index: 1;
 }
-
+.sidemenu h3 {
+  margin-bottom: 120px;
+}
 .sidemenu div {
-  color: #282c34;
-  margin: 45px;
+  color: #373341;
+  font-weight: 600;
+  margin: 25px 0px;
+  padding: 20px 0px;
 }
-
-.sidemenu div:hover {
-  color: #ed6a5a;
-  margin: 45px;
-}
-
-
 .link {
   text-decoration: none;
+}
+.sidemenu div:hover {
+  color: #ed6a5a;
 }
 
 .logo {
@@ -161,15 +160,13 @@ nav {
 }
 
 .display-tasks {
-
 }
 
 .tasks-display {
-  padding: 50px;
+  height: 80vh;
+
   list-style: none;
   background-color: whitesmoke;
-
-  
 }
 
 .search-profile {
@@ -178,34 +175,58 @@ nav {
   gap: 15px;
 }
 
-.search-profile div {
-  margin: 15px;
-}
-
-.search-profile .link {
+.profile-link {
+  padding: 25px 50px;
   color: #282c34;
-  margin: 15px;
 }
 
 .search-profile .link:hover {
   color: #ed6a5a;
 }
 
+.search-div {
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+  padding: 10px;
+  width: 20%;
+  border: 1px solid rgb(168, 168, 168);
+  border-radius: 40px;
+  position: relative;
+
+  background-color: white;
+}
+.search-div input[type="search"] {
+  border: none;
+}
+.search-div input[type="search"] {
+  border: none;
+}
+
+.search-div input[type="search"]:focus {
+  outline: none;
+}
+.search-div input[type="search"]::placeholder {
+  font-size: 1rem;
+  text-align: center;
+}
+#search-icon {
+  color: gray;
+}
 
 .Add {
-  
   text-align: end;
   margin: 15px;
 }
 
-.Add-div  button{
+.Add-div button {
   padding: 12px 32px;
   border: none;
   color: white;
   background-color: #ed6a5a;
 }
 
-.Add-div  button:hover{
+.Add-div button:hover {
   background-color: #5d576b;
 }
 
@@ -221,4 +242,23 @@ nav {
   display: flex;
   justify-content: space-evenly;
   gap: 50px;
+}
+
+.form-div form {
+  display: flex;
+  margin: 0;
+}
+
+.form-div h3 {
+  margin: 0;
+  text-align: center;
+}
+
+.update-form {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-link {
 }

@@ -9,11 +9,12 @@ function AddTask({ handleAddTask }) {
   return (
     <div className="Add">
       <div className="Add-div">
-        <button onClick={toggleClicked}>New Task</button>
+        {clicked ? (
+          <Form handleAddTask={handleAddTask} toggleClicked={toggleClicked} />
+        ) : (
+          <button onClick={toggleClicked}>New Task</button>
+        )}
       </div>
-      {clicked && (
-        <Form handleAddTask={handleAddTask} toggleClicked={toggleClicked} />
-      )}
     </div>
   );
 }
