@@ -20,10 +20,9 @@ function App() {
   const [registrationStatus, setRegistrationStatus] = useState(false);
 
   useEffect(() => {
-    console.log("updating...");
     const usersCopy = users.slice(0);
     const foundUser = usersCopy.find(
-      (user) => user.username === currentUser.username
+      (user) => user.username === currentUser.username,
     );
     if (foundUser) {
       foundUser.tasks = currentUser.tasks.slice(0);
@@ -32,21 +31,26 @@ function App() {
     setUsers(usersCopy);
   }, [currentUser]);
 
-  function handleUserUpdate(name) {
-    /*const usersCopy = users.slice(0);
-    let user = usersCopy.find((user) => user.username === name);
-    user.username = update.username;*/
+  function handleUserUpdate(obj) {
+    const usersCopy = { ...currentUser };
+    if (obj.username) {
+      usersCopy.username = obj.username;
+    }
 
-    setCurrentUser((prev) => ({ ...prev, username: name }));
+    if (obj.password) {
+      usersCopy.password = obj.password;
+    }
+
+    setCurrentUser(usersCopy);
   }
 
   function handleRegistrationSubmit(obj) {
     //check if user exists
     const filteredUser = users.filter((user) => user.username === obj.username);
     if (filteredUser.length > 0) {
-      console.log("user already exists");
+      alert("user already exists");
     } else if (obj.username === "" || obj.password === "") {
-      console.log("not user info");
+      alert("no user info");
     } else {
       setUsers((prev) => [...prev, obj]);
       setRegistrationStatus(true);
@@ -57,16 +61,14 @@ function App() {
     const findUser = users.filter((user) => user.username === obj.username);
     if (findUser.length > 0) {
       let [user] = findUser;
-      console.log("user exists", obj, findUser);
       if (user.password === obj.password) {
-        console.log("login success!");
         setLoginStatus(true);
         setCurrentUser(user);
       } else {
-        console.log("invalid login password");
+        alert("invalid login password");
       }
     } else {
-      console.log("user does not exist");
+      alert("user does not exist");
     }
   }
 
@@ -75,7 +77,7 @@ function App() {
   function handleAddTask(obj) {
     //find task
     const filteredTask = currentUser.tasks.filter(
-      (task) => task.taskName === obj.taskName
+      (task) => task.taskName === obj.taskName,
     );
 
     //if task doesn't exist add them
@@ -87,7 +89,7 @@ function App() {
 
   function handleTaskDelete(name) {
     const filteredTasks = currentUser.tasks.filter(
-      (task) => task.taskName !== name
+      (task) => task.taskName !== name,
     );
     setCurrentUser((prev) => ({ ...prev, tasks: filteredTasks }));
   }
@@ -130,7 +132,6 @@ function App() {
   function handleLogOut() {
     setLoginStatus(false);
   }
-  console.log(users);
   return (
     <Router>
       <div className="App">

@@ -104,28 +104,8 @@ nav {
   border-radius: 15px;
 }
 
-.login-form-container {
-  background-color: white;
 
-  padding: 40px;
 
-  border-radius: 15px;
-}
-
-.login-form-container h3 {
-  margin: 0px 0px 5px 0px;
-}
-
-.Login input[type="text"] {
-  padding: 7px 15px;
-  margin: 5px;
-}
-
-.Login input[type="submit"] {
-  width: 100%;
-  padding: 7px 15px;
-  margin: 5px;
-}
 
 .Registration input[type="text"] {
   padding: 7px 15px;
@@ -137,6 +117,57 @@ nav {
   padding: 7px 15px;
   margin: 5px;
 }
+
+.Login form {
+  margin:10% auto 0 auto;
+	padding:50px;
+	width:400px;
+	height:auto;
+	overflow:hidden;
+	background:white;
+	border-radius:10px;
+}
+
+.Login form label {
+	font-size:14px;
+	color:rgb(133, 133, 133);
+	cursor:pointer;
+}
+
+
+
+.Login form input {
+	margin:15px 0;
+	padding:15px 10px;
+	width:100%;
+	outline:none;
+	border:1px solid #bbb;
+	border-radius:20px;
+	display:inline-block;
+
+}
+
+.Login input[type=submit] {
+	padding:15px 50px;
+	width:auto;
+	background-color:#5d576b;
+	border:none;
+	color:white;
+	cursor:pointer;
+	display:inline-block;
+	width: 100%;
+	
+
+}
+
+.Login input[type=submit]:hover {
+
+	background-color:#ed6a5a;
+
+	
+
+}
+
 
 .Home {
   display: flex;
@@ -210,7 +241,7 @@ nav {
   display: flex;
   align-items: center;
   margin: 10px 0px;
-  padding: 0px 40px 0px 7px;
+  padding: 0px 40px 0px 40px;
 
   border: 1px solid rgb(168, 168, 168);
   border-radius: 50px;
@@ -394,14 +425,14 @@ nav {
     gap: 0px;
     align-items: center;
     flex: 0%;
-    padding: 5px;
+    padding: 50px 5px;
     margin: 0px;
     box-shadow: 0px 0 0px 0px;
   }
   .sidemenu-links {
     display: flex;
     justify-content: space-evenly;
-    gap: 15px;
+    gap: 25px;
     padding: 10px;
   }
 
@@ -422,6 +453,14 @@ nav {
   .update-form {
     flex-wrap: wrap;
   }
+
+  .profile-link {
+    display: none;
+  }
+
+  .search-div {
+    padding: 10px 50px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -436,11 +475,11 @@ nav {
   .form-div form {
     flex-wrap: wrap;
   }
-  .Task {
-  }
+
   .task-content {
     background-color: none;
     padding: 0px;
+    flex-wrap: wrap;
   }
   .task-info {
     margin: 0px;
@@ -449,17 +488,90 @@ nav {
     gap: 5px;
   }
 
-  .high {
+  .delete-update {
+    margin: 0px 0px 0px 5px;
+  
   }
+
+  .landing-info {
+    padding: 0px;
+  }
+  
+
+
 }
 
+@media (max-width: 425px) {
+  .sidemenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    align-items: center;
+  }
+
+  .form-div form {
+    flex-wrap: wrap;
+  }
+
+  .tasks-display {
+   
+    height: 100%;
+  }
+  .Task {
+  }
+  .task-content {
+    background-color: none;
+    padding: 0px;
+    flex-wrap: wrap;
+  }
+  .task-info {
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .delete-update {
+
+    align-items: start;
+  }
+
+
+
+}
+
+@media (max-width: 375px) {
+
+  .sidemenu-icons {
+    display: none;
+  }
+
+  .sidemenu-links {
+    padding: 25px;
+    font-size: 1.2rem;
+  }
+
+ 
+}
+
+
+
 @media (max-width: 320px) {
+  
+  .sidemenu-links {
+    justify-content: space-around;
+  }
+
   .task-content {
     flex-wrap: wrap;
   }
   .delete-update {
-    border: 1px solid black;
     padding: 0px;
     margin: 0px 0px 0px 50px;
+    align-items: start;
   }
+
+ 
 }

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Routes, Route, Link, Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
 
@@ -29,8 +28,8 @@ function DisplayTasks({
         tasks.filter(
           (task) =>
             task.taskName.toLowerCase().match(searchInput.toLowerCase()) ||
-            task.priority.toLowerCase().match(searchInput.toLowerCase())
-        )
+            task.priority.toLowerCase().match(searchInput.toLowerCase()),
+        ),
       );
     }
     return () => {
@@ -54,7 +53,7 @@ function DisplayTasks({
             id="search-icon"
             style={{
               position: "absolute",
-
+              left: "7px",
               fontSize: "1.6rem",
               marginRight: "0px",
               padding: "0px",

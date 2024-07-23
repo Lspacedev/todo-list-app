@@ -1,17 +1,21 @@
 import { useState } from "react";
 
 function Profile({ username, password, handleUserUpdate }) {
-  const [usernam, setUsernam] = useState("");
+  const [userUpdate, setUserUpdate] = useState({
+    username: "",
+    password: "",
+  });
   const [update, setUpdate] = useState(false);
 
-  function handleSubmit(newName) {
-    handleUserUpdate(newName);
+  function handleSubmit(obj) {
+    handleUserUpdate(obj);
     setUpdate(false);
   }
+
   function handleChange(e) {
     e.preventDefault();
     const { name, value } = e.target;
-    setUsernam(value);
+    setUserUpdate((prev) => ({ ...prev, [name]: value }));
   }
 
   return (
@@ -19,22 +23,7 @@ function Profile({ username, password, handleUserUpdate }) {
       <div className="profile-picture"></div>
       <div className="contact-details">
         <h1>Account details</h1>
-        {update && (
-          <div>
-            <div className="name">
-              <label htmlFor="user-name">
-                Update username:
-                <input
-                  type="text"
-                  id="user-name"
-                  onChange={(e) => handleChange(e)}
-                  value={usernam}
-                />
-              </label>
-            </div>
-            <button onClick={() => handleSubmit(usernam)}>Submit</button>
-          </div>
-        )}
+
         {/*<div className="fname-sname">
           <div className="fname">
             <h3>First name:</h3>
@@ -54,15 +43,51 @@ function Profile({ username, password, handleUserUpdate }) {
         <div className="user-pass">
           <div className="user">
             <h4>Username:</h4>
-            <div>{username}</div>
+            {update ? (
+              <div>
+                <div className="name">
+                  <label htmlFor="username">
+                    <input
+                      type="text"
+                      id="username"
+                      name="username"
+                      onChange={(e) => handleChange(e)}
+                      value={userUpdate.username}
+                    />
+                  </label>
+                </div>
+              </div>
+            ) : (
+              <div>{username}</div>
+            )}
           </div>
 
           <div className="pass">
             <h4>Password:</h4>
-            <div>{password}</div>
+            {update ? (
+              <div>
+                <div className="password">
+                  <label htmlFor="password">
+                    <input
+                      type="text"
+                      id="password"
+                      name="password"
+                      onChange={(e) => handleChange(e)}
+                      value={userUpdate.password}
+                    />
+                  </label>
+                </div>
+              </div>
+            ) : (
+              <div>{password}</div>
+            )}
           </div>
         </div>
-        <button onClick={() => setUpdate(true)}>Update</button>
+        <button
+          onClick={() => (update ? handleSubmit(userUpdate) : setUpdate(true))}
+        >
+          {update ? "Submit" : "Update"}
+        </button>
       </div>
     </div>
   );
