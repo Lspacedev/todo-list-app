@@ -14,7 +14,7 @@ function Login({ handleLoginSubmit, loginStatus }) {
       //on success redirect user
       navigation("/home");
     }
-  }, [loginStatus]);
+  }, [navigation, loginStatus]);
 
   function handleChange(e) {
     e.preventDefault();

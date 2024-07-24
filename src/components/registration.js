@@ -15,7 +15,7 @@ function Registration({ handleRegistrationSubmit, registrationStatus }) {
       //on success redirect user
       navigation("/login");
     }
-  }, [registrationStatus]);
+  }, [navigation, registrationStatus]);
 
   function handleChange(e) {
     e.preventDefault();

@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Login from "./components/login";
 import Home from "./components/Home";
@@ -7,7 +6,6 @@ import Landing from "./components/landing";
 import ProtectedRoutes from "./components/ProtectedRoute";
 import Profile from "./components/profile";
 import DisplayTasks from "./components/displayTasks";
-import User from "./components/user";
 import useLocalStorage from "./components/useLocalStorage";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -22,14 +20,14 @@ function App() {
   useEffect(() => {
     const usersCopy = users.slice(0);
     const foundUser = usersCopy.find(
-      (user) => user.username === currentUser.username,
+      (user) => user.username === currentUser.username
     );
     if (foundUser) {
       foundUser.tasks = currentUser.tasks.slice(0);
     }
 
     setUsers(usersCopy);
-  }, [currentUser]);
+  }, [users, setUsers, currentUser]);
 
   function handleUserUpdate(obj) {
     const usersCopy = { ...currentUser };
@@ -78,7 +76,7 @@ function App() {
   function handleAddTask(obj) {
     //find task
     const filteredTask = currentUser.tasks.filter(
-      (task) => task.taskName === obj.taskName,
+      (task) => task.taskName === obj.taskName
     );
 
     //if task doesn't exist add them
@@ -90,7 +88,7 @@ function App() {
 
   function handleTaskDelete(name) {
     const filteredTasks = currentUser.tasks.filter(
-      (task) => task.taskName !== name,
+      (task) => task.taskName !== name
     );
     setCurrentUser((prev) => ({ ...prev, tasks: filteredTasks }));
   }
