@@ -7,7 +7,7 @@ function Landing() {
         <div className="logo">todoList</div>
         <div className="login-register">
           <Link to="login">
-            <button className="login-btn">Login</button>
+            <button className="login-btn">Log in</button>
           </Link>
           <Link to="registration">
             <button className="register-btn">Register</button>

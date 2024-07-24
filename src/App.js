@@ -24,22 +24,26 @@ function App() {
     );
     if (foundUser) {
       foundUser.tasks = currentUser.tasks.slice(0);
+
+      //foundUser.username = currentUser.username;
+      //foundUser.password = currentUser.password;
     }
 
     setUsers(usersCopy);
   }, [currentUser]);
 
   function handleUserUpdate(obj) {
-    const usersCopy = { ...currentUser };
+    const userCopy = { ...currentUser };
+
     if (obj.username) {
-      usersCopy.username = obj.username;
+      userCopy.username = obj.username;
     }
 
     if (obj.password) {
-      usersCopy.password = obj.password;
+      userCopy.password = obj.password;
     }
 
-    setCurrentUser(usersCopy);
+    setCurrentUser(userCopy);
   }
 
   function handleRegistrationSubmit(obj) {
