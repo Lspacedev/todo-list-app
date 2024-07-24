@@ -98,110 +98,91 @@ nav {
 }
 
 .register-form-container {
-
   border-radius: 10px;
   text-align: center;
 }
 
-
-
 .Login form {
-  margin:10% auto 0 auto;
-	padding:50px;
-	width:400px;
-	height:auto;
-	overflow:hidden;
-	background:white;
-	border-radius:10px;
+  margin: 10% auto 0 auto;
+  padding: 50px;
+  width: 400px;
+  height: auto;
+  overflow: hidden;
+  background: white;
+  border-radius: 10px;
 }
 
 .Login form label {
-	font-size:14px;
-	color:rgb(133, 133, 133);
-	cursor:pointer;
+  font-size: 14px;
+  color: rgb(133, 133, 133);
+  cursor: pointer;
 }
-
-
 
 .Login form input {
-	margin:15px 0;
-	padding:15px 10px;
-	width:100%;
-	outline:none;
-	border:1px solid #bbb;
-	border-radius:10px;
-	display:inline-block;
-
+  margin: 15px 0;
+  padding: 15px 10px;
+  width: 100%;
+  outline: none;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  display: inline-block;
 }
 
-.Login input[type=submit] {
-	padding:15px 50px;
-	width:auto;
-	background-color:#5d576b;
-	border:none;
-	color:white;
-	cursor:pointer;
-	display:inline-block;
-	width: 100%;
-	
-
+.Login input[type="submit"] {
+  padding: 15px 50px;
+  width: auto;
+  background-color: #5d576b;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
 }
 
-.Login input[type=submit]:hover {
-
-	background-color:#ed6a5a;
-
+.Login input[type="submit"]:hover {
+  background-color: #ed6a5a;
 }
 
 .Registration form {
-  margin:10% auto 0 auto;
-	padding:50px;
-	width:400px;
-	height:auto;
-	overflow:hidden;
-	background:white;
-	border-radius:10px;
+  margin: 10% auto 0 auto;
+  padding: 50px;
+  width: 400px;
+  height: auto;
+  overflow: hidden;
+  background: white;
+  border-radius: 10px;
 }
 
 .Registration form label {
-	font-size:14px;
-	color:rgb(133, 133, 133);
-	cursor:pointer;
+  font-size: 14px;
+  color: rgb(133, 133, 133);
+  cursor: pointer;
 }
-
-
 
 .Registration form input {
-	margin:15px 0;
-	padding:15px 10px;
-	width:100%;
-	outline:none;
-	border:1px solid #bbb;
-	border-radius:10px;
-	display:inline-block;
-
+  margin: 15px 0;
+  padding: 15px 10px;
+  width: 100%;
+  outline: none;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  display: inline-block;
 }
 
-.Registration input[type=submit] {
-	padding:15px 50px;
-	width:auto;
-	background-color:#5d576b;
-	border:none;
-	color:white;
-	cursor:pointer;
-	display:inline-block;
-	width: 100%;
-	
-
+.Registration input[type="submit"] {
+  padding: 15px 50px;
+  width: auto;
+  background-color: #5d576b;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
 }
 
-.Registration input[type=submit]:hover {
-
-	background-color:#ed6a5a;
-
+.Registration input[type="submit"]:hover {
+  background-color: #ed6a5a;
 }
-
-
 
 .Home {
   display: flex;
@@ -235,7 +216,6 @@ nav {
 .sidemenu div:hover {
   color: #ed6a5a;
 }
-
 
 .logo {
   color: #373341;
@@ -446,22 +426,30 @@ nav {
 }
 
 .sidemenu-icons {
-  margin-right:5px;
+  margin-right: 5px;
 }
 
 #task-add-submit {
   background-color: #ed6a5a;
-  color:  white;
-  border:  none;
+  color: white;
+  border: none;
   margin-left: 2px;
 }
 
 #task-add-submit:hover {
   background-color: #5d576b;
- 
 }
 
 @media (max-width: 768px) {
+  .landing-title {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+  }
+  .landing-subtitle {
+    font-size: 1.5rem;
+    margin: 15px;
+  }
   .Home {
     flex-direction: column;
     height: 100%;
@@ -515,9 +503,17 @@ nav {
   }
 }
 
-
-
 @media (max-width: 480px) {
+  .logo {
+    padding: 15px;
+  }
+  .landing-title {
+    margin: 70px 50px;
+  }
+  .landing-subtitle {
+    font-size: 1.5rem;
+    margin: 15px;
+  }
   .sidemenu {
     display: flex;
     flex-direction: column;
@@ -544,18 +540,20 @@ nav {
 
   .delete-update {
     margin: 0px 0px 0px 5px;
-  
   }
 
   .landing-info {
     padding: 0px;
   }
-  
-
-
 }
 
 @media (max-width: 425px) {
+  .landing-title {
+    margin: 70px 40px;
+  }
+  .landing-subtitle {
+    margin: 15px;
+  }
   .sidemenu {
     display: flex;
     flex-direction: column;
@@ -569,11 +567,9 @@ nav {
   }
 
   .tasks-display {
-   
     height: 100%;
   }
-  .Task {
-  }
+
   .task-content {
     background-color: none;
     padding: 0px;
@@ -588,16 +584,19 @@ nav {
   }
 
   .delete-update {
-
     align-items: start;
   }
-
-
-
 }
 
 @media (max-width: 375px) {
-
+  .landing-title {
+    font-size: 3rem;
+    margin: 70px 50px;
+  }
+  .landing-subtitle {
+    font-size: 1.5rem;
+    margin: 15px;
+  }
   .sidemenu-icons {
     display: none;
   }
@@ -606,14 +605,18 @@ nav {
     padding: 25px;
     font-size: 1.2rem;
   }
-
- 
 }
 
-
-
 @media (max-width: 320px) {
-  
+  .landing-title {
+    font-size: 2.5rem;
+    margin: 70px 50px;
+  }
+  .landing-subtitle {
+    font-size: 1.5rem;
+    margin: 15px;
+  }
+
   .sidemenu-links {
     justify-content: center;
     gap: 2px;
@@ -628,6 +631,4 @@ nav {
     margin: 0px 0px 0px 50px;
     align-items: start;
   }
-
- 
 }

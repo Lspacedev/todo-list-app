@@ -24,7 +24,7 @@ function Home({
   return (
     <div className="Home">
       <div className="sidemenu">
-        <h3 className="logo">todo List</h3>
+        <h3 className="logo">todoList</h3>
         <div className="sidemenu-links">
           <div>
             <MdOutlineDashboard className="sidemenu-icons" />

@@ -4,7 +4,7 @@ function Landing() {
   return (
     <div className="landing">
       <nav>
-        <div className="logo">todo List</div>
+        <div className="logo">todoList</div>
         <div className="login-register">
           <Link to="login">
             <button className="login-btn">Login</button>
