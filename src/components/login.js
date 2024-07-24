@@ -11,7 +11,6 @@ function Login({ handleLoginSubmit, loginStatus }) {
   const navigation = useNavigate();
   useEffect(() => {
     if (loginStatus === true) {
-      console.log("statussssssss");
       //on success redirect user
       navigation("/home");
     }

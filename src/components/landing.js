@@ -16,8 +16,12 @@ function Landing() {
       </nav>
       <div className="landing-info">
         <div className="landing-title">Organize your day to day tasks.</div>
-        <div className="landing-subtitle">Organize your day to day tasks.</div>
-        <button className="register-btn2">Register</button>
+        <div className="landing-subtitle">
+          A simple way to manage your daily tasks.
+        </div>
+        <Link to="registration">
+          <button className="register-btn2">Register Now</button>
+        </Link>
       </div>
     </div>
   );

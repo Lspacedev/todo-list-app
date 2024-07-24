@@ -52,6 +52,7 @@ function App() {
     } else if (obj.username === "" || obj.password === "") {
       alert("no user info");
     } else {
+      alert("Account created.");
       setUsers((prev) => [...prev, obj]);
       setRegistrationStatus(true);
     }

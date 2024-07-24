@@ -12,8 +12,6 @@ function Registration({ handleRegistrationSubmit, registrationStatus }) {
   const navigation = useNavigate();
   useEffect(() => {
     if (registrationStatus) {
-      console.log(registrationStatus);
-      console.log("statussssssss");
       //on success redirect user
       navigation("/login");
     }
@@ -33,7 +31,7 @@ function Registration({ handleRegistrationSubmit, registrationStatus }) {
   return (
     <div className="Registration">
       <div className="register-form-container">
-        <h1>Registration</h1>
+        <h1>Create Account</h1>
         <form>
           <div className="username">
             <label htmlFor="username">

@@ -29,7 +29,7 @@ body {
 }
 .landing-subtitle {
   font-size: 1.5rem;
-  margin: 10px;
+  margin: 25px;
 }
 nav {
   display: flex;
@@ -51,7 +51,7 @@ nav {
 .login-register {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 25px;
 }
 
 .login-btn {
@@ -77,6 +77,7 @@ nav {
   color: white;
   font-weight: bold;
   padding: 20px 30px;
+  margin: 20px;
   border-radius: 8px;
   border: none;
 }
@@ -97,26 +98,12 @@ nav {
 }
 
 .register-form-container {
-  background-color: white;
 
-  padding: 40px;
-
-  border-radius: 15px;
+  border-radius: 10px;
+  text-align: center;
 }
 
 
-
-
-.Registration input[type="text"] {
-  padding: 7px 15px;
-  margin: 5px;
-}
-
-.Registration input[type="submit"] {
-  width: 100%;
-  padding: 7px 15px;
-  margin: 5px;
-}
 
 .Login form {
   margin:10% auto 0 auto;
@@ -142,7 +129,7 @@ nav {
 	width:100%;
 	outline:none;
 	border:1px solid #bbb;
-	border-radius:20px;
+	border-radius:10px;
 	display:inline-block;
 
 }
@@ -164,9 +151,56 @@ nav {
 
 	background-color:#ed6a5a;
 
+}
+
+.Registration form {
+  margin:10% auto 0 auto;
+	padding:50px;
+	width:400px;
+	height:auto;
+	overflow:hidden;
+	background:white;
+	border-radius:10px;
+}
+
+.Registration form label {
+	font-size:14px;
+	color:rgb(133, 133, 133);
+	cursor:pointer;
+}
+
+
+
+.Registration form input {
+	margin:15px 0;
+	padding:15px 10px;
+	width:100%;
+	outline:none;
+	border:1px solid #bbb;
+	border-radius:10px;
+	display:inline-block;
+
+}
+
+.Registration input[type=submit] {
+	padding:15px 50px;
+	width:auto;
+	background-color:#5d576b;
+	border:none;
+	color:white;
+	cursor:pointer;
+	display:inline-block;
+	width: 100%;
 	
 
 }
+
+.Registration input[type=submit]:hover {
+
+	background-color:#ed6a5a;
+
+}
+
 
 
 .Home {
@@ -193,6 +227,7 @@ nav {
   color: #373341;
   margin: 15px 45px;
   padding: 20px 0px;
+  width: 100%;
 }
 .link {
   text-decoration: none;
@@ -200,6 +235,7 @@ nav {
 .sidemenu div:hover {
   color: #ed6a5a;
 }
+
 
 .logo {
   color: #373341;
@@ -317,7 +353,7 @@ nav {
 
 .update-form {
   display: flex;
-  padding: 0;
+  padding: 5px;
   margin: 0;
 }
 
@@ -410,7 +446,19 @@ nav {
 }
 
 .sidemenu-icons {
-  margin-right: 5px;
+  margin-right:5px;
+}
+
+#task-add-submit {
+  background-color: #ed6a5a;
+  color:  white;
+  border:  none;
+  margin-left: 2px;
+}
+
+#task-add-submit:hover {
+  background-color: #5d576b;
+ 
 }
 
 @media (max-width: 768px) {
@@ -434,6 +482,10 @@ nav {
     justify-content: space-evenly;
     gap: 25px;
     padding: 10px;
+    text-align: end;
+  }
+  .sidemenu-icons {
+    display: none;
   }
 
   .sidemenu div {
@@ -462,6 +514,8 @@ nav {
     padding: 10px 50px;
   }
 }
+
+
 
 @media (max-width: 480px) {
   .sidemenu {
@@ -561,7 +615,9 @@ nav {
 @media (max-width: 320px) {
   
   .sidemenu-links {
-    justify-content: space-around;
+    justify-content: center;
+    gap: 2px;
+    text-align: center;
   }
 
   .task-content {

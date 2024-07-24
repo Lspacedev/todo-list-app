@@ -99,6 +99,7 @@ function Form({ handleAddTask, toggleClicked }) {
           </div>
 
           <input
+            id="task-add-submit"
             type="submit"
             value="submit"
             onClick={(e) => handleSubmit(e)}
