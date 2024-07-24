@@ -27,7 +27,7 @@ function App() {
     }
 
     setUsers(usersCopy);
-  }, [users, setUsers, currentUser]);
+  }, [currentUser]);
 
   function handleUserUpdate(obj) {
     const usersCopy = { ...currentUser };
