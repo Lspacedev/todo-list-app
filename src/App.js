@@ -14,13 +14,15 @@ function App() {
   //users array
   const [users, setUsers] = useLocalStorage("users", []);
   const [currentUser, setCurrentUser] = useLocalStorage("currentUser", {});
+  const [currentTemp, setCurrentTemp] = useState({});
+
   const [loginStatus, setLoginStatus] = useLocalStorage("loginStatus", false);
   const [registrationStatus, setRegistrationStatus] = useState(false);
 
   useEffect(() => {
     const usersCopy = users.slice(0);
     const foundUser = usersCopy.find(
-      (user) => user.username === currentUser.username
+      (user) => user.username === currentUser.username,
     );
     if (foundUser) {
       foundUser.tasks = currentUser.tasks.slice(0);
@@ -80,7 +82,7 @@ function App() {
   function handleAddTask(obj) {
     //find task
     const filteredTask = currentUser.tasks.filter(
-      (task) => task.taskName === obj.taskName
+      (task) => task.taskName === obj.taskName,
     );
 
     //if task doesn't exist add them
@@ -92,7 +94,7 @@ function App() {
 
   function handleTaskDelete(name) {
     const filteredTasks = currentUser.tasks.filter(
-      (task) => task.taskName !== name
+      (task) => task.taskName !== name,
     );
     setCurrentUser((prev) => ({ ...prev, tasks: filteredTasks }));
   }
@@ -133,6 +135,19 @@ function App() {
   }
 
   function handleLogOut() {
+    const usersCopy = users.slice(0);
+    const foundUser = usersCopy.find((user) => user.id === currentUser.id);
+    console.log(currentTemp, foundUser, currentUser);
+
+    if (foundUser) {
+      foundUser.username = currentUser.username;
+      foundUser.password = currentUser.password;
+      foundUser.tasks = currentUser.tasks.slice(0);
+    }
+
+    console.log("new", usersCopy);
+    setUsers(usersCopy);
+
     setLoginStatus(false);
   }
   return (
@@ -145,6 +160,7 @@ function App() {
             path="registration"
             element={
               <Registration
+                count={users.length}
                 handleRegistrationSubmit={handleRegistrationSubmit}
                 registrationStatus={registrationStatus}
               />
