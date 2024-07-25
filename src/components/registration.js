@@ -31,7 +31,7 @@ function Registration({ handleRegistrationSubmit, registrationStatus }) {
   return (
     <div className="Registration">
       <div className="register-form-container">
-        <h1>Create Account</h1>
+        <h2>Create new account</h2>
         <form>
           <div className="username">
             <label htmlFor="username">
@@ -61,7 +61,7 @@ function Registration({ handleRegistrationSubmit, registrationStatus }) {
 
           <input
             type="submit"
-            value="submit"
+            value="Register"
             onClick={(e) => handleSubmit(e)}
           ></input>
         </form>

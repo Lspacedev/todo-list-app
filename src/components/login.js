@@ -30,7 +30,7 @@ function Login({ handleLoginSubmit, loginStatus }) {
   return (
     <div className="Login">
       <div className="login-form-container">
-        <h3>Login </h3>
+        <h2>Welcome back!</h2>
         <form>
           <div className="username">
             <label htmlFor="username">
@@ -60,7 +60,7 @@ function Login({ handleLoginSubmit, loginStatus }) {
 
           <input
             type="submit"
-            value="submit"
+            value="Log in"
             onClick={(e) => handleSubmit(e)}
           ></input>
         </form>
