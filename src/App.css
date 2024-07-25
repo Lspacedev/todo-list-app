@@ -317,7 +317,7 @@ nav {
 }
 .task-content {
   padding: 0px 10px 0px 0px;
-  width: 98%;
+  width: 100%;
   background-color: white;
   display: flex;
   flex-direction: row;
@@ -343,7 +343,7 @@ nav {
 
 .update-form {
   display: flex;
-  padding: 5px;
+  padding: 5px 7px;
   margin: 0;
 }
 
@@ -387,6 +387,21 @@ nav {
 .delete-icon,
 .edit-icon {
   font-size: 1.2rem;
+}
+
+.update-btn {
+  margin: 0px;
+  padding: 0px;
+}
+
+.delete-update {
+  margin: 0px;
+  padding: 0px;
+}
+
+.delete {
+  margin: 0px;
+  padding: 0px;
 }
 
 .task-info .title {
@@ -519,6 +534,7 @@ nav {
   }
   .landing-title {
     margin: 70px 50px;
+    font-size: 3.2rem;
   }
   .landing-subtitle {
     font-size: 1.5rem;
@@ -571,6 +587,9 @@ nav {
 
     align-items: center;
   }
+  .sidemenu-links {
+    gap: 25px;
+  }
 
   .form-div form {
     flex-wrap: wrap;
@@ -595,6 +614,9 @@ nav {
 
   .delete-update {
     align-items: start;
+  }
+  .tasks-display {
+    height: 100vh;
   }
 }
 
@@ -626,9 +648,26 @@ nav {
   .Registration form {
     width: 360px;
   }
+  .tasks-display {
+    height: 100vh;
+  }
 }
 
 @media (max-width: 320px) {
+  nav {
+    justify-content: space-between;
+    gap: 0px;
+
+    margin: 0px;
+    padding: 0px;
+  }
+  .login-btn {
+    padding: 0px;
+  }
+
+  .login-register {
+    gap: 5px;
+  }
   .landing-title {
     font-size: 2.5rem;
     margin: 70px 50px;
@@ -640,7 +679,7 @@ nav {
 
   .sidemenu-links {
     justify-content: center;
-    gap: 2px;
+    gap: 10px;
     text-align: center;
   }
 
@@ -657,5 +696,9 @@ nav {
   }
   .Registration form {
     width: 320px;
+  }
+
+  .tasks-display {
+    height: 100vh;
   }
 }
