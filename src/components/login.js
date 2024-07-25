@@ -60,7 +60,7 @@ function Login({ handleLoginSubmit, loginStatus }) {
 
           <input
             type="submit"
-            value="submit"
+            value="Log in"
             onClick={(e) => handleSubmit(e)}
           ></input>
         </form>

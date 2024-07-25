@@ -26,6 +26,7 @@ body {
   font-size: 4rem;
   font-weight: bold;
   margin: 20px;
+  color: #1c1a22;
 }
 .landing-subtitle {
   font-size: 1.5rem;
@@ -110,6 +111,12 @@ nav {
 .register-form-container {
   border-radius: 10px;
   text-align: center;
+}
+.register-form-container {
+  color: #2d2936;
+}
+.login-form-container h2 {
+  color: #2d2936;
 }
 
 .Login form {
