@@ -143,7 +143,11 @@ function Task({
               edit ? handleTaskResubmit(name, obj) : handleTaskUpdate(name);
             }}
           >
-            {edit ? "Update" : <FaEdit className="edit-icon" />}
+            {edit ? (
+              <div className="update-btn">Update </div>
+            ) : (
+              <FaEdit className="edit-icon" />
+            )}
           </button>
 
           <button className="delete" onClick={() => handleTaskDelete(name)}>
