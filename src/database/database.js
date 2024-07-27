@@ -6,7 +6,6 @@ function Database() {
   const [db, setDb] = useState(null);
 
   const initDb = async () => {
-    //let datab;
     try {
       const SQL = await initSqlJs({
         // Required to load the wasm binary asynchronously. Of course, you can host it wherever you want
@@ -14,7 +13,6 @@ function Database() {
         locateFile: (file) => `https://sql.js.org/dist/${file}`,
       });
       let datab = new SQL.Database();
-      //setDb(new SQL.Database());
 
       /*let sqlstr = `CREATE TABLE user (id int, name char); \"`;
 
@@ -59,13 +57,7 @@ function Database() {
   };*/
 
   useEffect(() => initDb, []);
-  //console.dir(db);
-  /*let sqlstr =
-    "CREATE TABLE hello (a int, b char); \
-INSERT INTO hello VALUES (0, 'hello'); \
-INSERT INTO hello VALUES (1, 'world');";*/
-  //db.run(sqlstr);
-  //console.log(db.exec("select * from hello"));
+
   return (
     <div>
       <h1>Database</h1>
