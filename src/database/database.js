@@ -5,7 +5,6 @@ function Database() {
   const [users, setUsers] = useState(["a", "b", "c", "d", "e"]);
   const [db, setDb] = useState(null);
 
-  const [error, setError] = useState(null);
   const initDb = async () => {
     //let datab;
     try {
@@ -16,8 +15,7 @@ function Database() {
       });
       let datab = new SQL.Database();
       //setDb(new SQL.Database());
-      let user1 = users[2];
-      let user2 = users[3];
+
       /*let sqlstr = `CREATE TABLE user (id int, name char); \"`;
 
       console.log(sqlstr);
@@ -31,7 +29,6 @@ function Database() {
         INSERT INTO user VALUES (1, 'world'); \
         
         `;
-      console.log(sqlstr);
       datab.run(sqlstr);
       let arr = datab.exec("select * from user");
       console.log(datab);
@@ -41,6 +38,25 @@ function Database() {
       console.log(err);
     }
   };
+
+  /*const initDb2 = async () => {
+    //let datab;
+    try {
+      const SQL = await initSqlJs({
+        // Required to load the wasm binary asynchronously. Of course, you can host it wherever you want
+        // You can omit locateFile completely when running in node
+        locateFile: (file) => `https://sql.js.org/dist/${file}`,
+      });
+
+      let res = await fetch("test.db");
+      let arrayBuffer = await res.arrayBuffer();
+      let uInt8Array = new Uint8Array(arrayBuffer);
+      let db = new SQL.Database(uInt8Array);
+      console.log(db);
+    } catch (err) {
+      console.log(err);
+    }
+  };*/
 
   useEffect(() => initDb, []);
   //console.dir(db);
