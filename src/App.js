@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     const usersCopy = users.slice(0);
     const foundUser = usersCopy.find(
-      (user) => user.username === currentUser.username,
+      (user) => user.username === currentUser.username
     );
     if (foundUser) {
       foundUser.tasks = currentUser.tasks.slice(0);
@@ -49,6 +49,7 @@ function App() {
   }
 
   function handleRegistrationSubmit(obj) {
+    console.log("FFR", obj);
     //check if user exists
     const filteredUser = users.filter((user) => user.username === obj.username);
     if (filteredUser.length > 0) {
@@ -82,7 +83,7 @@ function App() {
   function handleAddTask(obj) {
     //find task
     const filteredTask = currentUser.tasks.filter(
-      (task) => task.taskName === obj.taskName,
+      (task) => task.taskName === obj.taskName
     );
 
     //if task doesn't exist add them
@@ -94,7 +95,7 @@ function App() {
 
   function handleTaskDelete(name) {
     const filteredTasks = currentUser.tasks.filter(
-      (task) => task.taskName !== name,
+      (task) => task.taskName !== name
     );
     setCurrentUser((prev) => ({ ...prev, tasks: filteredTasks }));
   }
@@ -140,13 +141,15 @@ function App() {
     console.log(currentTemp, foundUser, currentUser);
 
     if (foundUser) {
+      foundUser.id = currentUser.id;
       foundUser.username = currentUser.username;
       foundUser.password = currentUser.password;
       foundUser.tasks = currentUser.tasks.slice(0);
+      //usersCopy = usersCopy.filter(user);
+      setUsers(usersCopy);
     }
 
     console.log("new", usersCopy);
-    setUsers(usersCopy);
 
     setLoginStatus(false);
   }
