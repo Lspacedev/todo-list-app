@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Registration({ handleRegistrationSubmit, registrationStatus }) {
+function Registration({ count, handleRegistrationSubmit, registrationStatus }) {
   const [userDetails, setUserDetails] = useState({
+    id: count + 1,
     username: "",
     password: "",
     tasks: [],
