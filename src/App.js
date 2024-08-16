@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import Registration from "./components/registration";
 import Landing from "./components/landing";
 import ProtectedRoutes from "./components/ProtectedRoute";
+import ProtectedRouteReg from "./components/ProtectedRouteReg";
 import Profile from "./components/profile";
 import DisplayTasks from "./components/displayTasks";
 import useLocalStorage from "./components/useLocalStorage";
@@ -158,17 +159,19 @@ function App() {
       <div className="App">
         <Routes>
           <Route exact path="/" element={<Landing />} />
-          <Route
-            exact
-            path="registration"
-            element={
-              <Registration
-                count={users.length}
-                handleRegistrationSubmit={handleRegistrationSubmit}
-                registrationStatus={registrationStatus}
-              />
-            }
-          />
+          <Route element={<ProtectedRouteReg loginStatus={loginStatus} />}>
+            <Route
+              exact
+              path="registration"
+              element={
+                <Registration
+                  count={users.length}
+                  handleRegistrationSubmit={handleRegistrationSubmit}
+                  registrationStatus={registrationStatus}
+                />
+              }
+            />
+          </Route>
           <Route
             exact
             path="login"
